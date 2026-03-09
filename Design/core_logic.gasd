@@ -2,7 +2,7 @@
    GASD Design: Core Calculation Engine v1.0.0
    ====================================
    Scope: Arithmetic, Scientific Functions, Equation Solving
-   Compliance: gasd-1.0.0.gasd
+   Compliance: gasd-1.1.0.gasd
 */
 
 CONTEXT: "Core Computation Logic"
@@ -21,6 +21,9 @@ TYPE EquationRoots:
     roots: List<String>
     type: Enum("REAL", "COMPLEX")
 
+TYPE MathExpression:
+    value: String @min_length(1)
+
 // --- 2. Component Contracts ---
 
 COMPONENT MathEngine @injectable:
@@ -35,7 +38,7 @@ COMPONENT MathEngine @injectable:
 FLOW evaluate_expression(expr: String) -> CalculationResult:
     @error_strategy("Fail-Fast")
     
-    1. VALIDATE expr @min_length(1)
+    1. VALIDATE expr AS TYPE.MathExpression
     2. ACHIEVE "Lexical Scanning"
     3. ACHIEVE "Syntactic Parsing" // Build AST
     4. ENSURE is_valid_math IS TRUE OTHERWISE THROW "Invalid Syntax"

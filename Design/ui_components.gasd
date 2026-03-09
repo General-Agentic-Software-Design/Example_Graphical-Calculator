@@ -2,7 +2,7 @@
    GASD Design: Graph Plotting Engine v1.0.0
    ==========================
    Scope: Main View, Graph View, History Panel, Accessibility
-   Compliance: gasd-1.0.0.gasd
+   Compliance: gasd-1.1.0.gasd
 */
 
 CONTEXT: "Frontend UI Architecture"

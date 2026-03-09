@@ -3,7 +3,7 @@
    ===========================================================
    Source: Build Plan.md
    Version: 1.1.0
-   Compliance: gasd-1.0.0.gasd
+   Compliance: gasd-1.1.0.gasd
 */
 
 CONTEXT: "Project Lifecycle & Build Orchestration"
@@ -16,13 +16,14 @@ NAMESPACE: "org.calculator.build"
 DECISION "Lifecycle Model":
     CHOSEN: "Design-First Agentic Implementation"
     RATIONALE: "Formal GASD specifications ensure deterministic and traceable code generation."
-    AFFECTS: ["Design Folder", "Implementation Folder", "QA"]
+    ALTERNATIVES: ["Waterfall", "Agile"]
+    AFFECTS: [*]
 
 DECISION "Implementation Target":
     CHOSEN: "React OR Java"
     RATIONALE: "The system supports both modern web (React) and traditional desktop (Java) environments."
     ALTERNATIVES: ["React", "Java"]
-    AFFECTS: ["Implementation Folder", "Build Pipeline"]
+    AFFECTS: [*]
 
 
 // --- 2. Phase 1: Build Design GASD Files ---

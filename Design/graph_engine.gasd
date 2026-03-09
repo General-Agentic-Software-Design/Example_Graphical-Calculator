@@ -1,7 +1,7 @@
    GASD Design: Graph Plotting Engine v1.0.0
    ==================================
    Scope: Function Plotting, Zoom, Pan, Interaction
-   Compliance: gasd-1.0.0.gasd
+   Compliance: gasd-1.1.0.gasd
 */
 
 CONTEXT: "Graph Visualization"
