@@ -32,7 +32,7 @@ FLOW main_evaluation_process(input: String):
             PERSIST "history_entry" via local_storage
         Failure(err):
             ACHIEVE "Error Feedback" via UI.DisplayPanel.highlight_error(err.pos)
-    4. ENSURE UI_state_is_consistent
+    4. ENSURE UI_state_is_consistent OTHERWISE THROW "UI state inconsistency detected"
 
 FLOW handle_smart_equals(input: String):
     1. MATCH input_state:
@@ -56,8 +56,7 @@ FLOW main_plotting_process(fn: String):
     4. ACHIEVE "Switch Tab" via UI.CalculatorApp.switch_tab("GRAPH")
     5. ACHIEVE "Force Resize" via UI.CalculatorApp.resize_canvas()
     6. ACHIEVE "Add to History" // Record function string
-    7. ENSURE graph_is_visible
-    7. ENSURE graph_is_visible
+    7. ENSURE graph_is_visible OTHERWISE THROW "Graph rendering failed"
 
 FLOW graph_interaction_handling(action: Enum("ZOOM_IN", "ZOOM_OUT", "RESET", "AUTO_SCALE", "CLEAR")):
     1. MATCH action:
@@ -91,7 +90,7 @@ FLOW comprehensive_feature_demo():
     4. ACHIEVE "Dynamic Plotting" (sin(x)*cos(x/2))
     5. ACHIEVE "Interactive Exploration" (Zoom x2, Out x1, Pan)
     6. ACHIEVE "State Persistence Check" (Reload from history)
-    7. ENSURE "All Core Requirements Satisfied"
+    7. ENSURE "All Core Requirements Satisfied" OTHERWISE THROW "Feature demonstration failed"
 
 // --- 2. Functional Constraints ---
 

@@ -1,0 +1,5 @@
+# GASD Project Ignore File
+Implementation/
+bin/
+sources.txt
+.DS_Store
