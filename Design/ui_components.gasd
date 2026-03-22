@@ -1,4 +1,4 @@
-```
+/*
    GASD Design: Graph Plotting Engine v1.0.0
    ==========================
    Scope: Main View, Graph View, History Panel, Accessibility
@@ -10,7 +10,18 @@ TARGET: "Modern Web Browser / Vanilla CSS"
 TRACE: "Requirements/User Stories.md#L256-L347"
 NAMESPACE: "org.calculator.ui"
 
-// --- 1. UI Components ---
+// --- 1. Abstract Data Types ---
+
+TYPE DOM:
+    element: Any
+
+TYPE CalculationEntry:
+    id: UUID
+    expression: String
+    result: String
+    timestamp: DateTime
+
+// --- 2. UI Components ---
 
 COMPONENT CalculatorApp:
     PATTERN: "Single Page Application"
